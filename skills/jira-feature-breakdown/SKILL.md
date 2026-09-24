@@ -15,6 +15,7 @@ Convert broad product requirements into a clean Jira hierarchy that can be plann
 - Create a separate Story only when the capability has independent product value or can be accepted independently.
 - Avoid duplicate scope across stories.
 - Preserve explicit sprint constraints and phased delivery boundaries.
+- Separate current scope from future enhancements.
 - Do not invent requirements to make the breakdown look complete.
 - When titles are roadmap-facing, use plain customer-understandable language that says what will be delivered; avoid unexplained technical or internal workflow terms.
 

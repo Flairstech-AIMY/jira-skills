@@ -1,6 +1,6 @@
 ---
 name: jira-ticket-refiner
-description: Refine an existing Jira Story, Task, Bug, or rough ticket draft by removing filler, closing clarity gaps, improving structure, strengthening acceptance criteria, and preserving intent and supported requirements. Use when the user asks to improve, clean up, shorten, fix gaps in, review, complete, or make a Jira issue clearer. Preserve the original intent and confirmed requirements. Do not silently add product behavior or technical assumptions that are not supported by the source material.
+description: Refine an existing Jira Story, Task, Bug, or rough ticket draft by removing filler, closing clarity gaps, improving structure, strengthening acceptance criteria, and preserving important examples and references. Use when the user asks to improve, clean up, shorten, fix gaps in, review, complete, or make a Jira issue clearer. Preserve the original intent and confirmed requirements. Do not silently add product behavior or technical assumptions that are not supported by the source material.
 ---
 
 # Jira Ticket Refiner
