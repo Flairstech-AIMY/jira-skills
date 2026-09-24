@@ -15,8 +15,8 @@ Convert broad product requirements into a clean Jira hierarchy that can be plann
 - Create a separate Story only when the capability has independent product value or can be accepted independently.
 - Avoid duplicate scope across stories.
 - Preserve explicit sprint constraints and phased delivery boundaries.
-- Separate current scope from future enhancements.
 - Do not invent requirements to make the breakdown look complete.
+- When titles are roadmap-facing, use plain customer-understandable language that says what will be delivered; avoid unexplained technical or internal workflow terms.
 
 ## Workflow
 
@@ -45,6 +45,8 @@ Keep work in the same Story when the split would only represent:
 - UI/UX versus implementation;
 - API versus database work;
 - one technical layer required to make the same user capability function.
+
+For multi-step conversational support flows, make sure each behavior has one clear home: for example, handling an unavailable transfer, guiding a user through an appropriate action, setting follow-up expectations, and recording a useful teammate handoff. Split only where each behavior has an independently testable outcome, and avoid repeating the same promise or ticket requirement in multiple Stories.
 
 ## Default Output
 
@@ -93,6 +95,7 @@ Before returning the breakdown, verify all of the following:
 - Tasks are concrete implementation deliverables, not restatements of the Story.
 - Dependencies are stated only when real ordering or prerequisite constraints exist.
 - Deferred items are not accidentally included in current acceptance criteria.
+- Adjacent roadmap titles are distinct, plain-language statements of customer-visible outcomes.
 
 If the user asks whether the current Stories cover the feature, identify missing user capabilities first. Do not manufacture extra Stories merely for symmetry.
 

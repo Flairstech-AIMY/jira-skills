@@ -1,6 +1,6 @@
 ---
 name: jira-ticket-refiner
-description: Refine an existing Jira Story, Task, Bug, or rough ticket draft by removing filler, closing clarity gaps, improving structure, strengthening acceptance criteria, and preserving important examples and references. Use when the user asks to improve, clean up, shorten, fix gaps in, review, complete, or make a Jira issue clearer. Preserve the original intent and confirmed requirements. Do not silently add product behavior or technical assumptions that are not supported by the source material.
+description: Refine an existing Jira Story, Task, Bug, or rough ticket draft by removing filler, closing clarity gaps, improving structure, strengthening acceptance criteria, and preserving intent and supported requirements. Use when the user asks to improve, clean up, shorten, fix gaps in, review, complete, or make a Jira issue clearer. Preserve the original intent and confirmed requirements. Do not silently add product behavior or technical assumptions that are not supported by the source material.
 ---
 
 # Jira Ticket Refiner
@@ -14,6 +14,7 @@ Improve an existing Jira issue without changing what the user is actually asking
 3. Expose ambiguity.
 4. Make behavior testable.
 5. Keep useful examples.
+6. Make roadmap-facing titles clear to their customer or stakeholder audience.
 
 ## Workflow
 
@@ -42,6 +43,8 @@ If a gap materially blocks implementation or testing, add a short `Open Question
 
 If the user explicitly asks to brainstorm possible behavior, separate suggestions from confirmed requirements.
 
+When caller-facing wording is only a proposed phrase, preserve it as an example and identify any needed approval; do not present it as approved copy. When follow-up, a callback, or a promised solution depends on an operational commitment, retain that dependency as an open question unless it is confirmed.
+
 ## What to Remove
 
 Remove or compress:
@@ -64,7 +67,8 @@ Preserve:
 - explicit scope limits;
 - important exceptions;
 - explicit urgency or production impact;
-- user-provided technical constraints.
+- user-provided technical constraints;
+- the distinction between confirmed behavior and unresolved decisions.
 
 ## Acceptance Criteria Refinement
 
@@ -99,7 +103,9 @@ Common useful categories include:
 - first interaction versus repeated interaction;
 - active versus deactivated records;
 - immediate completion versus delayed processing;
-- one open item versus multiple open items.
+- one open item versus multiple open items;
+- user can perform an action versus the agent or a teammate needs to do it;
+- teammate available versus unavailable for transfer.
 
 Do not add edge cases solely because they are theoretically possible.
 

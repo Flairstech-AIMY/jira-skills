@@ -35,6 +35,20 @@ Only include dimensions that matter for the requested feature.
 - Do not force the agent to speak twice when the processing result is already available and the second utterance would feel unnatural.
 - Include concrete examples when they clarify intent better than abstract prose.
 
+## After-Hours Availability, Transfers, and Follow-Up
+
+For support flows that depend on working hours or teammate availability, make the decision path explicit and keep these behaviors distinct:
+
+- State the condition that defines after-hours behavior, using the configured availability source rather than inventing a schedule or timezone.
+- If a transfer is unavailable, have the agent explain that no teammate is currently available and offer the help it can provide. Do not attempt a transfer outside the defined availability window.
+- If the user continues to request a teammate, specify whether the agent records a ticket and what follow-up it may promise. Do not promise a callback or resolution timeframe unless the requirement confirms it.
+- For steps that require access the agent does not have, distinguish actions the user can safely and reasonably perform from those that must go to a teammate. If the user cannot complete an eligible step, record the issue, troubleshooting already performed, and the point where work stopped so the teammate can continue.
+- When the agent cannot proceed, explain what happens next and reassure the user that prior troubleshooting will be available to the person following up only if the handoff actually preserves it.
+- For handoff tickets, preserve the issue summary, troubleshooting, outcome, and next step. If a Solution section is required, do not invent a diagnosis or fix: distinguish a verified solution from one still pending teammate investigation. Include instructions to use the recorded context and avoid asking the user to repeat information already captured.
+- Separate these into different Stories only when each represents an independently deliverable user outcome. Assign each shared behavior to one clear owner Story to prevent overlapping scope.
+
+Treat proposed wording as draft wording unless the source confirms it is approved. Record the approver or unresolved decision when it affects what the agent may tell users.
+
 ## Default Story Structure
 
 ```markdown

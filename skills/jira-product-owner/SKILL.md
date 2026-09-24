@@ -26,6 +26,8 @@ For stories and other outcome-focused tickets, use:
 
 Describe what the user or stakeholder can accomplish. Keep implementation discipline and role tags (such as Frontend, Backend, Infrastructure, or Research) out of the title; put a suggested owner in the body when known. For work that is inherently non-user-facing, retain the same clear product/domain framing and state the deliverable rather than pretending it is a user feature.
 
+When titles will appear on a customer-facing or stakeholder roadmap, use plain language that makes the delivered outcome understandable without the original conversation or internal project context. Avoid unexplained acronyms, implementation terms, and internal workflow labels. Keep related titles distinct enough that a reader can tell what each delivers.
+
 ## Story body
 
 Use this structure for stories:
@@ -58,11 +60,17 @@ Do not add Acceptance Criteria unless the user explicitly asks for them. Keep th
 
 Split multi-sprint work into independently deliverable tickets that can be completed within a sprint. Depending on the actual workflow, consider separate work for user experience, frontend, backend/file and history management, orchestration or analysis flow, research, integrations, data collection, and storage/security/infrastructure. Use only the areas required by the initiative; do not create filler tickets. Preserve dependencies and make blockers explicit.
 
+When a workflow has distinct user-visible stages (for example, handling a request, guiding the user through an eligible step, explaining follow-up, and preparing a handoff), assign each requirement to one clear ticket. Split only where the outcome can be delivered and validated independently; do not repeat shared behavior across several tickets.
+
 When rewriting or mapping existing Jira work, preserve its intent and provide a traceable old-to-new mapping. Cover the full workflow that the user actually described; do not impose a generic workflow where it does not apply.
 
 ## Before creating Jira issues
 
 If the user has not already provided these details, ask for the missing information before creating issues: Jira project/board, sprint, priority, dependencies, blockers, and stakeholders. Do not guess issue types, issue fields, owners, or relationships. If some details are not applicable, confirm or document that rather than fabricating values. This intake requirement applies to issue creation; it need not block drafting a proposed ticket when the user only asks for text or a file.
+
+Before creating, search the relevant Jira project for existing issues with the same or substantially similar outcome. If matching issues exist, avoid creating duplicates: summarize the match and clarify whether the user wants the existing issues updated or new distinct work created when intent is not clear.
+
+When updating or creating issues, use the exact configured Jira values for parent, sprint, and fix version. Validate the available option/name rather than assuming a shorthand version string is accepted; preserve existing relationships and fields unless the user asks to change them.
 
 Use the available Jira integration when the user requests an issue to be created or updated. Check relevant project/type/field requirements and available tool documentation first. Confirm the resulting issue key and link only after the operation succeeds.
 
@@ -76,7 +84,7 @@ Before returning a ticket, verify that it:
 
 - States a specific user or stakeholder need and why it matters.
 - Defines a clear outcome and a concise, observable Definition of Done.
-- Uses an outcome-focused title without role tags.
+- Uses an outcome-focused title without role tags and, when roadmap-facing, plain language a customer can understand.
 - Is appropriately sized and independently deliverable, or has explicit dependencies.
 - Contains only necessary technical guidance and no invented facts.
 - Omits Acceptance Criteria unless requested.
