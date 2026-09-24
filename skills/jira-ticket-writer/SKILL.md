@@ -18,6 +18,7 @@ Turn messy input into a Jira issue that a product, engineering, QA, or DevOps te
 - Make urgency visible when the user explicitly states it, but do not assign a Jira priority unless asked.
 - If a material requirement is genuinely unknown, use `TBD` or an `Open Questions` section rather than guessing.
 - Do not add sections that contain no useful information.
+- When the title will appear on a customer-facing or stakeholder roadmap, make the delivered outcome clear in plain language without relying on internal context or unexplained jargon.
 
 ## Choose the Issue Type
 
@@ -156,13 +157,14 @@ Avoid:
 - Avoid repeating the same requirement in Problem, Requirements, and Acceptance Criteria with identical wording.
 - Keep useful examples because they often remove ambiguity faster than more prose.
 - Keep future enhancements separate from current scope when the user distinguishes them.
+- Make related roadmap titles describe distinct customer outcomes rather than implementation subtasks.
 
 ## Final Quality Check
 
 Before returning the ticket, verify:
 
 - The issue type matches the nature of the work.
-- The title describes the outcome or defect, not the conversation about it.
+- The title describes the outcome or defect, not the conversation about it, and is understandable to its roadmap audience.
 - The problem and scope are understandable without the original chat.
 - No unsupported assumptions were introduced.
 - Acceptance criteria are testable.
