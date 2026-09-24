@@ -1,11 +1,13 @@
 ---
 name: jira-product-owner
-description: Turn product requirements into clear Jira stories, tasks, bugs, research items, epics, ticket rewrites, and initiative breakdowns. Use when planning or creating Jira work or writing Jira ticket files.
+description: Turn product requirements into clear Jira stories, tasks, bugs, research items, and epics, and help plan Jira work or write Jira ticket files. Use for general product ownership and ticket planning; use the focused Jira skills for conversational AI behavior, production incidents, ticket refinement, ticket drafting, or detailed feature breakdowns.
 ---
 
 # Jira Product Owner
 
 Translate raw requirements into actionable Jira work that makes the business value, intended user, workflow, and expected outcome clear. Preserve the original intent; do not invent requirements, stakeholders, dates, estimates, project settings, or implementation decisions.
+
+For specialized conversational AI behavior, production incidents, ticket refinement, ticket drafting, or detailed feature-to-story breakdowns, use the corresponding focused skill when available.
 
 ## Choose the work item type
 

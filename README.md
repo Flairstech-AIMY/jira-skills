@@ -8,21 +8,31 @@ Reusable Jira product ownership skills for Claude Code, OpenAI Codex, and GitHub
 | --- | --- |
 | [`jira-product-owner`](skills/jira-product-owner/SKILL.md) | Turning requirements into clear Jira stories, tasks, bugs, research items, epics, and initiative breakdowns. |
 | [`jira-database-deployment`](skills/jira-database-deployment/SKILL.md) | Creating focused database-deployment and migration-pipeline tickets. |
+| [`jira-ai-behavior-story`](skills/jira-ai-behavior-story/SKILL.md) | Writing testable conversational AI and voice-agent behavior Stories. |
+| [`jira-feature-breakdown`](skills/jira-feature-breakdown/SKILL.md) | Breaking initiatives into outcome-based Stories and supporting Tasks. |
+| [`jira-production-incident`](skills/jira-production-incident/SKILL.md) | Turning production incidents and operational failures into focused Jira issues. |
+| [`jira-ticket-refiner`](skills/jira-ticket-refiner/SKILL.md) | Refining an existing Jira ticket while preserving intent and supported requirements. |
+| [`jira-ticket-writer`](skills/jira-ticket-writer/SKILL.md) | Drafting concise Jira Stories, Tasks, Bugs, or investigation items from rough input. |
 
 ## Install
 
-Install both skills interactively for the agents available in your environment:
+Install the skills interactively for the agents available in your environment:
 
 ```sh
 npx skills add Flairstech-AIMY/jira-skills
 ```
 
-Install both explicitly for Claude Code, Codex, and GitHub Copilot:
+Install all skills explicitly for Claude Code, Codex, and GitHub Copilot:
 
 ```sh
 npx skills add Flairstech-AIMY/jira-skills \
   --skill jira-product-owner \
   --skill jira-database-deployment \
+  --skill jira-ai-behavior-story \
+  --skill jira-feature-breakdown \
+  --skill jira-production-incident \
+  --skill jira-ticket-refiner \
+  --skill jira-ticket-writer \
   --agent claude-code \
   --agent codex \
   --agent github-copilot
