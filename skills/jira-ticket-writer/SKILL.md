@@ -19,6 +19,7 @@ Turn messy input into a Jira issue that a product, engineering, QA, or DevOps te
 - If a material requirement is genuinely unknown, use `TBD` or an `Open Questions` section rather than guessing.
 - Do not add sections that contain no useful information.
 - When the title will appear on a customer-facing or stakeholder roadmap, make the delivered outcome clear in plain language without relying on internal context or unexplained jargon.
+- Keep the Jira Summary and Description separate: never repeat the issue title as an H1 or first line in the Description. Start with the first useful section instead.
 
 ## Choose the Issue Type
 
@@ -43,14 +44,13 @@ When the user asks whether something is a Story or Task, explain the distinction
 6. Write acceptance criteria that describe observable completion conditions.
 7. Check that every acceptance criterion is supported by the stated requirement.
 8. Check that no supplied reference or important edge case was lost.
+9. Verify the Description does not repeat the Jira Summary/title.
 
 ## Story Format
 
 Use this structure when the issue is a Story. Omit optional sections when unnecessary.
 
 ```markdown
-# [Concise title]
-
 ## User Story
 As a [actor],
 I want [capability or behavior],
@@ -79,8 +79,6 @@ Do not force an `As a / I want / so that` sentence when it would be artificial. 
 ## Task Format
 
 ```markdown
-# [Concise title]
-
 ## Objective
 [Concrete technical or operational outcome.]
 
@@ -102,8 +100,6 @@ Do not force an `As a / I want / so that` sentence when it would be artificial. 
 ## Bug Format
 
 ```markdown
-# [Concise title]
-
 ## Problem
 [Concise description of the defect.]
 
@@ -169,4 +165,5 @@ Before returning the ticket, verify:
 - No unsupported assumptions were introduced.
 - Acceptance criteria are testable.
 - Important examples and references remain intact.
+- The Jira Description starts with useful content rather than a duplicate title.
 - The result is ready to paste into Jira.

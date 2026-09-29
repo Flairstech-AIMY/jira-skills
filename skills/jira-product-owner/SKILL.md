@@ -28,13 +28,15 @@ Describe what the user or stakeholder can accomplish. Keep implementation discip
 
 When titles will appear on a customer-facing or stakeholder roadmap, use plain language that makes the delivered outcome understandable without the original conversation or internal project context. Avoid unexplained acronyms, implementation terms, and internal workflow labels. Keep related titles distinct enough that a reader can tell what each delivers.
 
+## Jira Description formatting
+
+The Jira Summary is the issue title; the Description is separate content. Do not repeat the Summary as a Markdown H1 or as the first line of the Description. Start the Description with its first relevant section. Apply the same rule when creating or updating any issue type.
+
 ## Story body
 
 Use this structure for stories:
 
 ```markdown
-# {Product / Initiative} – {Domain / Area} – {User-Facing Outcome}
-
 ## Business Context
 Explain the user need, workflow, problem, and business value.
 
@@ -76,7 +78,7 @@ Use the available Jira integration when the user requests an issue to be created
 
 ## Ticket files
 
-When asked to produce Markdown files, follow the requested destination and naming convention. If the project specifies a `tickets/` directory with one subfolder per session, follow that convention and name each file from its ticket title. Do not create files in unrequested locations.
+When asked to produce Markdown files, follow the requested destination and naming convention. If the project specifies a `tickets/` directory with one subfolder per session, follow that convention and name each file from its ticket title. Do not create files in unrequested locations. A standalone ticket file may include its title; omit that heading when the content is intended for the Jira Description field.
 
 ## Quality check
 
@@ -85,6 +87,7 @@ Before returning a ticket, verify that it:
 - States a specific user or stakeholder need and why it matters.
 - Defines a clear outcome and a concise, observable Definition of Done.
 - Uses an outcome-focused title without role tags and, when roadmap-facing, plain language a customer can understand.
+- Contains no duplicate title in the Jira Description.
 - Is appropriately sized and independently deliverable, or has explicit dependencies.
 - Contains only necessary technical guidance and no invented facts.
 - Omits Acceptance Criteria unless requested.
