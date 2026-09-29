@@ -26,6 +26,7 @@ Improve an existing Jira issue without changing what the user is actually asking
 6. Identify material gaps that cannot be resolved from the source.
 7. Preserve all useful links, IDs, examples, and edge cases.
 8. Return the complete revised ticket, not a patch or list of edits, unless the user asks for a critique only.
+9. When editing Jira Description content, do not repeat the issue Summary/title as a heading or first line; remove a duplicate heading while preserving the Summary.
 
 ## Do Not Silently Fill Gaps
 
@@ -54,7 +55,8 @@ Remove or compress:
 - generic motivation that does not affect the requirement;
 - implementation speculation presented as if it were decided;
 - redundant acceptance criteria;
-- headings with no meaningful content.
+- headings with no meaningful content;
+- a Description heading that repeats the Jira Summary/title.
 
 ## What to Preserve
 
@@ -111,7 +113,7 @@ Do not add edge cases solely because they are theoretically possible.
 
 ## Default Output
 
-Return the polished Jira ticket using the original issue type and a structure appropriate to it.
+Return the polished Jira ticket using the original issue type and a structure appropriate to it. Keep the title as the Jira Summary; omit it from Description field content.
 
 Add `Open Questions` only when unresolved information materially affects implementation or QA.
 

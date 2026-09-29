@@ -13,6 +13,7 @@ Reusable Jira product ownership skills for Claude Code, OpenAI Codex, and GitHub
 | [`jira-production-incident`](skills/jira-production-incident/SKILL.md) | Turning production incidents and operational failures into focused Jira issues. |
 | [`jira-ticket-refiner`](skills/jira-ticket-refiner/SKILL.md) | Refining an existing Jira ticket while preserving intent and supported requirements. |
 | [`jira-ticket-writer`](skills/jira-ticket-writer/SKILL.md) | Drafting concise Jira Stories, Tasks, Bugs, or investigation items from rough input. |
+| [`jira-description-format`](skills/jira-description-format/SKILL.md) | Formatting Jira descriptions without repeating the issue Summary/title in the body. |
 
 ## Install
 
@@ -33,6 +34,7 @@ npx skills add Flairstech-AIMY/jira-skills \
   --skill jira-production-incident \
   --skill jira-ticket-refiner \
   --skill jira-ticket-writer \
+  --skill jira-description-format \
   --agent claude-code \
   --agent codex \
   --agent github-copilot
@@ -53,11 +55,12 @@ Copy a skill's whole folder (including its `SKILL.md`) into the appropriate proj
 - Codex: `.agents/skills/`
 - GitHub Copilot: `.github/skills/`
 
-For user-level installation, use the agent's documented personal skills directory. Restart or refresh the agent if it does not discover a newly added skill.
+For user-level installation, use the agent's documented personal skills directory. Restart or refresh the agent if it does not discover a newly installed skill.
 
 ## Design principles
 
 - Keep the skills portable across products and teams; do not assume a particular Jira project, workflow, cloud provider, or tool integration.
 - Preserve the user's intent, do not invent missing facts, and ask for material details before creating Jira issues.
 - Keep issue content focused on user value and outcomes. Avoid unnecessary implementation detail and never put secrets or credentials in tickets.
+- Keep the Jira Summary separate from the Description: do not repeat the title as a heading or first line in the Description.
 - Use Jira integration tools only when available, and be explicit about what has and has not been created.

@@ -34,6 +34,7 @@ Only include dimensions that matter for the requested feature.
 - Account for race conditions between a temporary acknowledgment and a result that becomes ready immediately.
 - Do not force the agent to speak twice when the processing result is already available and the second utterance would feel unnatural.
 - Include concrete examples when they clarify intent better than abstract prose.
+- Keep the Jira Summary separate from the Description; do not repeat the title as an H1 or first line in the Description.
 
 ## After-Hours Availability, Transfers, and Follow-Up
 
@@ -51,9 +52,9 @@ Treat proposed wording as draft wording unless the source confirms it is approve
 
 ## Default Story Structure
 
-```markdown
-# [AiMY product area] - [Behavior outcome]
+Use the following sections in the Jira Description; the issue title is already stored in the Jira Summary.
 
+```markdown
 ## User Story
 As a [caller / user / agent / admin],
 I want [AI behavior],
@@ -143,3 +144,4 @@ Verify that QA can answer all relevant questions from the ticket:
 - What happens if processing finishes sooner than expected?
 - Does previous session or ticket state matter?
 - Are examples consistent with the acceptance criteria?
+- Does the Jira Description avoid repeating the Summary/title?

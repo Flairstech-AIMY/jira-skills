@@ -17,6 +17,7 @@ Create incident tickets that help the team investigate, fix, and prevent recurre
 - Preserve urgency exactly when the user states it.
 - Do not invent severity levels, affected-user counts, downtime, or timestamps.
 - If the incident is recurring, make recurrence prevention part of the required outcome.
+- Keep the Jira Summary separate from the Description; never repeat the title as an H1 or first line in the Description.
 
 ## Choose Bug vs Task
 
@@ -29,8 +30,6 @@ If the immediate cause is unknown but production is failing, a Bug can still inc
 ## Default Incident Format
 
 ```markdown
-# [Service] - [Observed production failure]
-
 ## Summary
 [What happened, where, and when using only confirmed information.]
 
