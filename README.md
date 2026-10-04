@@ -1,6 +1,6 @@
 # Jira Skills
 
-Reusable Jira product ownership skills for Claude Code, OpenAI Codex, and GitHub Copilot. The skills are written in the open `SKILL.md` format and kept under `skills/` so they can be installed selectively with the Skills CLI or copied into an agent's standard skills directory.
+Reusable Jira product ownership and MADS project-management skills for Claude Code, OpenAI Codex, and GitHub Copilot. The skills are written in the open `SKILL.md` format and kept under `skills/` so they can be installed selectively with the Skills CLI or copied into an agent's standard skills directory.
 
 ## Available skills
 
@@ -14,6 +14,7 @@ Reusable Jira product ownership skills for Claude Code, OpenAI Codex, and GitHub
 | [`jira-ticket-refiner`](skills/jira-ticket-refiner/SKILL.md) | Refining an existing Jira ticket while preserving intent and supported requirements. |
 | [`jira-ticket-writer`](skills/jira-ticket-writer/SKILL.md) | Drafting concise Jira Stories, Tasks, Bugs, or investigation items from rough input. |
 | [`jira-description-format`](skills/jira-description-format/SKILL.md) | Formatting Jira descriptions without repeating the issue Summary/title in the body. |
+| [`mads-project-management`](skills/mads-project-management/SKILL.md) | Discovering MADS MCP tools, using project-management workflows, and connecting relevant work to Jira plans. |
 
 ## Install
 
@@ -35,6 +36,7 @@ npx skills add Flairstech-AIMY/jira-skills \
   --skill jira-ticket-refiner \
   --skill jira-ticket-writer \
   --skill jira-description-format \
+  --skill mads-project-management \
   --agent claude-code \
   --agent codex \
   --agent github-copilot
