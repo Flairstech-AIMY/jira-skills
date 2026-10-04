@@ -12,6 +12,8 @@ Reusable Jira product ownership and MADS project-management skills for Claude Co
 | [`jira-feature-breakdown`](skills/jira-feature-breakdown/SKILL.md) | Breaking initiatives into outcome-based Stories and supporting Tasks. |
 | [`jira-production-incident`](skills/jira-production-incident/SKILL.md) | Turning production incidents and operational failures into focused Jira issues. |
 | [`jira-ticket-refiner`](skills/jira-ticket-refiner/SKILL.md) | Refining an existing Jira ticket while preserving intent and supported requirements. |
+| [`jira-user-outcome-story-refiner`](skills/jira-user-outcome-story-refiner/SKILL.md) | Reframing technical or implementation-led Stories around confirmed user needs and observable outcomes. |
+| [`jira-implementation-neutral-task-breakdown`](skills/jira-implementation-neutral-task-breakdown/SKILL.md) | Suggesting outcome-based supporting engineering Tasks without prescribing implementation choices. |
 | [`jira-ticket-writer`](skills/jira-ticket-writer/SKILL.md) | Drafting concise Jira Stories, Tasks, Bugs, or investigation items from rough input. |
 | [`jira-description-format`](skills/jira-description-format/SKILL.md) | Formatting Jira descriptions without repeating the issue Summary/title in the body. |
 | [`mads-project-management`](skills/mads-project-management/SKILL.md) | Discovering MADS MCP tools, using project-management workflows, and connecting relevant work to Jira plans. |
@@ -34,6 +36,8 @@ npx skills add Flairstech-AIMY/jira-skills \
   --skill jira-feature-breakdown \
   --skill jira-production-incident \
   --skill jira-ticket-refiner \
+  --skill jira-user-outcome-story-refiner \
+  --skill jira-implementation-neutral-task-breakdown \
   --skill jira-ticket-writer \
   --skill jira-description-format \
   --skill mads-project-management \
