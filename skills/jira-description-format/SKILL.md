@@ -10,7 +10,9 @@ Keep the Jira issue Summary and Description distinct. Jira already displays the 
 ## Rules
 
 - Never start a Jira Description with an H1 that repeats the issue Summary or title.
-- Begin the Description with its first useful section, such as `## Business Context`, `## User Story`, `## Objective`, or `## Problem`.
+- Begin the Description with a short plain-prose narrative: the need, the idea behind the user's expectation, and the story behind the request. Do not open with a header, and never with `## Business Context`.
+- Headers may appear only after that opening narrative, and only when they add structure (for example, `## Definition of Done`).
+- Do not include `## Suggested Owner`, `## Estimate`, `## Dependencies`, or `## Technical Notes` sections unless the user explicitly asks for that information. Never add them as defaults or placeholders (including "TBC").
 - Do not repeat the title as an unformatted first line either.
 - Preserve a title in a standalone ticket document only when the output is intended to be a document rather than Jira Description field content.
 - When editing an existing issue, remove a duplicated title heading from the Description without changing the Summary or the ticket's intent.
@@ -25,11 +27,12 @@ Summary:
 Description:
 
 ```markdown
-## Business Context
-Users need to upload multiple files in one workflow...
+Users currently have to upload files one at a time, which slows down workflows where they
+need to share several documents together. They expect to select everything once and
+have it handled as a single action...
 
-## Purpose
-Allow users to select and upload multiple files...
+## Definition of Done
+- Users can select and upload multiple files in one action.
 ```
 
 Do not put `# AiMY – Uploads – Upload Multiple Files` at the top of the Description.

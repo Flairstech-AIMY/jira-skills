@@ -74,9 +74,6 @@ so that [outcome].
 1. **[Task name]**: [Concrete implementation outcome]
 2. **[Task name]**: [Concrete implementation outcome]
 
-### Dependencies
-- [Only if applicable]
-
 ## Story 2: [Outcome-oriented title]
 ...
 
@@ -84,7 +81,7 @@ so that [outcome].
 - [Explicitly deferred capability]
 ```
 
-If the user asks only for Stories, omit Tasks.
+If the user asks only for Stories, omit Tasks. Add a `### Dependencies` section only when the user asks for dependencies; it must never appear in a Jira Description unless requested.
 
 ## Coverage Check
 
@@ -94,7 +91,7 @@ Before returning the breakdown, verify all of the following:
 - No Story exists solely because a different engineering discipline owns it.
 - Each Story has a clear actor or business outcome.
 - Tasks are concrete implementation deliverables, not restatements of the Story.
-- Dependencies are stated only when real ordering or prerequisite constraints exist.
+- Dependencies are included only when the user asks for them and a real prerequisite exists.
 - Deferred items are not accidentally included in current acceptance criteria.
 - Adjacent roadmap titles are distinct, plain-language statements of customer-visible outcomes.
 

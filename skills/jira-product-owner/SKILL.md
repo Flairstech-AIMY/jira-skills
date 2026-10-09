@@ -24,39 +24,26 @@ For stories and other outcome-focused tickets, use:
 
 `{Product / Initiative} – {Domain / Area} – {User-Facing Outcome}`
 
-Describe what the user or stakeholder can accomplish. Keep implementation discipline and role tags (such as Frontend, Backend, Infrastructure, or Research) out of the title; put a suggested owner in the body when known. For work that is inherently non-user-facing, retain the same clear product/domain framing and state the deliverable rather than pretending it is a user feature.
+Describe what the user or stakeholder can accomplish. Keep implementation discipline and role tags (such as Frontend, Backend, Infrastructure, or Research) out of the title; mention an owner only when the user asks for one. For work that is inherently non-user-facing, retain the same clear product/domain framing and state the deliverable rather than pretending it is a user feature.
 
 When titles will appear on a customer-facing or stakeholder roadmap, use plain language that makes the delivered outcome understandable without the original conversation or internal project context. Avoid unexplained acronyms, implementation terms, and internal workflow labels. Keep related titles distinct enough that a reader can tell what each delivers.
 
 ## Jira Description formatting
 
-The Jira Summary is the issue title; the Description is separate content. Do not repeat the Summary as a Markdown H1 or as the first line of the Description. Start the Description with its first relevant section. Apply the same rule when creating or updating any issue type.
+The Jira Summary is the issue title; the Description is separate content. Do not repeat the Summary as a Markdown H1 or as the first line of the Description. Start the Description with a short prose narrative of the need and the story behind the user's expectation, not with a header such as `## Business Context`. Never include `## Suggested Owner`, `## Estimate`, `## Dependencies`, or `## Technical Notes` unless the user explicitly asks for them. Apply the same rule when creating or updating any issue type.
 
 ## Story body
 
 Use this structure for stories:
 
 ```markdown
-## Business Context
-Explain the user need, workflow, problem, and business value.
-
-## Purpose
-State the user-facing goal and expected outcome.
-
-## Technical Notes
-Include only information necessary to clarify delivery or important constraints.
+{Opening prose, no header: the user need, the idea behind the expectation, the workflow or problem, and the business value, told as a short story.}
 
 ## Definition of Done
 - List the observable outcomes required for completion.
-
-## Suggested Owner
-{Accountable person or team, if known; otherwise TBC}
-
-## Estimate
-{S / M / L, or the requested estimate scale}
 ```
 
-Do not add Acceptance Criteria unless the user explicitly asks for them. Keep the Definition of Done concise and verifiable; do not restate the entire implementation plan. For other issue types, adapt the sections to the work while retaining a clear context, purpose, and completion outcome.
+Add `## Technical Notes`, `## Suggested Owner`, `## Estimate`, or `## Dependencies` only when the user explicitly requests that information. Do not add Acceptance Criteria unless the user explicitly asks for them. Keep the Definition of Done concise and verifiable; do not restate the entire implementation plan. For other issue types, adapt the sections to the work while retaining a clear context, purpose, and completion outcome.
 
 ## Break down larger initiatives
 
@@ -88,6 +75,7 @@ Before returning a ticket, verify that it:
 - Defines a clear outcome and a concise, observable Definition of Done.
 - Uses an outcome-focused title without role tags and, when roadmap-facing, plain language a customer can understand.
 - Contains no duplicate title in the Jira Description.
+- Opens with a prose narrative (no header) and has no Suggested Owner, Estimate, Dependencies, or Technical Notes sections unless requested.
 - Is appropriately sized and independently deliverable, or has explicit dependencies.
 - Contains only necessary technical guidance and no invented facts.
 - Omits Acceptance Criteria unless requested.

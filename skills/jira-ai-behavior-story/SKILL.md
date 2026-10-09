@@ -54,7 +54,11 @@ Treat proposed wording as draft wording unless the source confirms it is approve
 
 Use the following sections in the Jira Description; the issue title is already stored in the Jira Summary.
 
+Begin the Description with a short prose narrative of the need and the story behind the expected behavior, before any header. Do not add `## Suggested Owner`, `## Estimate`, `## Dependencies`, or `## Technical Notes` unless the user explicitly asks for them.
+
 ```markdown
+[Opening prose: the need and the story behind it.]
+
 ## User Story
 As a [caller / user / agent / admin],
 I want [AI behavior],
@@ -79,9 +83,6 @@ so that [experience or business outcome].
 ### [Scenario name]
 **Caller:** ...
 **AiMY:** ...
-
-## Technical Notes
-[Only technical choices explicitly supplied by the user.]
 
 ## References
 - [Provided reference]
@@ -111,7 +112,7 @@ When the user explicitly wants a classifier or small model to choose an acknowle
 - describe the inputs or context at a product level;
 - define the expected classes or decision outcome only if the user supplied them or they are required by the behavior;
 - require graceful fallback when classification is uncertain if the source requirement calls for it;
-- keep model names and vendor choices in `Technical Notes` unless they are product requirements.
+- keep model names and vendor choices out of the story unless they are product requirements.
 
 ## Identity and Disambiguation Stories
 

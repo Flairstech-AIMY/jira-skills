@@ -21,12 +21,10 @@ Use the title:
 
 Include:
 
-- Business context: users and applications need the intended database schema deployed repeatably and safely, rather than relying on an unintended default.
-- Purpose: a named database is available to the target application, with required migrations applied and basic connectivity verified.
-- Technical Notes: the expected database name (not a default such as `postgres`), expected server type (use `psql` only when the user has not specified another type), and only the environment and connection/security context necessary to act. Reference secret names rather than secret values.
+- Opening narrative (no header): users and applications need the intended database schema deployed repeatably and safely, rather than relying on an unintended default; a named database should be available to the target application with required migrations applied.
+- The expected database name (not a default such as `postgres`) and server type, stated in the narrative or Definition of Done. Reference secret names rather than secret values.
 - Definition of Done: the named database is available, migrations are current, a basic connection/query succeeds, and required connection details are handled securely.
-- Suggested Owner: Infrastructure, with Backend support, unless the user gives a different owner.
-- Estimate: M or L, based on the scope the user provides.
+- Do not add Technical Notes, Suggested Owner, Estimate, or Dependencies sections unless the user explicitly asks for them.
 
 Keep the ticket concise. Do not include raw credentials, connection strings containing secrets, code samples, migration naming conventions, build-spec locations, detailed deployment/rollback/monitoring plans, or environment/network specifics unless the user requests them or they are necessary to make the requested work actionable. Never invent a database name or claim a smoke check has already passed.
 

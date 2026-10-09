@@ -13,7 +13,7 @@ Reframe a Jira Story so the delivered user capability is clear while leaving eng
 - The user asks to make a ticket more user-focused, less technical, clearer, or suitable for a product roadmap.
 - The user wants a rough requirement turned into a user-facing Story.
 
-Do not use this skill to conceal a technical constraint that the user explicitly requires. Preserve confirmed constraints in Technical Notes.
+Do not use this skill to conceal a technical constraint that the user explicitly requires. Preserve confirmed constraints in the narrative or a Technical Notes section only when the user asks for that section.
 
 ## Workflow
 
@@ -39,29 +39,16 @@ Do not put role tags, engineering disciplines, implementation tasks, or unexplai
 Use the following sections when they add useful information; omit empty or unsupported sections:
 
 ```markdown
-## Business Context
-[User need, workflow, problem, and why it matters.]
-
-## Purpose
-[Concise statement of the user-facing outcome.]
-
-## Technical Notes
-[Only confirmed constraints or minimal context needed by engineering. Leave solution selection to the team.]
+[Opening prose with no header: the user need, the idea behind their expectation, and the story behind the request, ending with the user-facing outcome.]
 
 ## Definition of Done
 - [Observable, confirmed outcome]
-
-## Suggested Owner
-[Only when known; otherwise omit or mark as to be confirmed if the user requires the field.]
-
-## Estimate
-[Only when supplied or requested; otherwise omit or mark as to be confirmed if required.]
 
 ## Open Questions
 - [Only material unresolved decisions]
 ```
 
-The user may request another template. Follow the requested format unless it conflicts with preserving intent or avoiding unsupported requirements.
+Never start with a header such as `## Business Context`. Add `## Technical Notes`, `## Suggested Owner`, `## Estimate`, or `## Dependencies` only when the user explicitly asks for them. The user may request another template. Follow the requested format unless it conflicts with preserving intent or avoiding unsupported requirements.
 
 ## Guardrails
 
@@ -69,7 +56,7 @@ The user may request another template. Follow the requested format unless it con
 - Do not add follow-up flows, explanations, incremental processing, notifications, or other useful-sounding behavior unless it is present in confirmed requirements.
 - Keep examples illustrative unless the source explicitly makes them required behavior.
 - Avoid vague claims such as “better experience” unless paired with the specific user outcome.
-- Avoid duplicating Business Context, Purpose, requirements, and Definition of Done. Make each section serve a distinct purpose.
+- Avoid duplicating the opening narrative, requirements, and Definition of Done. Make each section serve a distinct purpose.
 - If the user asks for acceptance criteria, make each criterion observable and traceable to an explicit requirement; do not prescribe implementation.
 
 ## Final check

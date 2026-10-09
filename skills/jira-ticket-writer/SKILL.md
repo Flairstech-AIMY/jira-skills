@@ -10,6 +10,7 @@ Turn messy input into a Jira issue that a product, engineering, QA, or DevOps te
 ## Core Rules
 
 - Preserve the user's intent and all confirmed facts.
+- Follow `jira-description-format`: open every Description with a short prose narrative of the need and the story behind it (no leading header, never `## Business Context`), and omit `## Suggested Owner`, `## Estimate`, `## Dependencies`, and `## Technical Notes` unless the user explicitly asks for them.
 - Keep the ticket concise. Remove filler, repetition, conversational phrasing, and unnecessary background.
 - Do not invent missing behavior, technical details, dates, severity, assignees, estimates, or acceptance criteria that are not supported by the input.
 - Preserve supplied URLs and references exactly unless the user explicitly asks to clean them.
