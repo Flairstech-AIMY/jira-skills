@@ -25,25 +25,25 @@ Do not use this skill to create a task list when the user asks only for a Story.
 6. Label the list as suggested work for engineering refinement. Keep any user-facing behavior that is not confirmed in Open Questions instead of embedding it in tasks.
 7. Return concise, complete task suggestions under the relevant Story. If the user requested standalone Jira Task descriptions, use the Task format below.
 
+When the user expects engineers to create their own technical breakdown, a clear Story and focused research may be sufficient. Do not add standard implementation, integration and testing Tasks just to complete a template. Preserve the problem and decision outputs so engineers can choose their work and propose additional Stories.
+
+Association in a planning document is not necessarily Jira parenting. Check the project's hierarchy before publishing: supporting work may be linked sibling Tasks or true child Subtasks, depending on the supported types.
+
 ## Task wording
 
 Prefer outcome-led names and descriptions:
 
-- **Evaluate viable approaches** — Assess the options against the confirmed user outcome and existing constraints; return a recommendation, trade-offs, and material risks for the team to decide.
-- **Enable the agreed capability** — Deliver the selected approach so the confirmed user outcome can be demonstrated; leave implementation details to engineering.
-- **Integrate the capability into the user workflow** — Make the outcome available in the relevant product experience, without prescribing a particular interface or service design.
-- **Validate behavior and existing functionality** — Verify the confirmed user scenarios and check that named existing behavior remains usable.
+- **Evaluate viable approaches** - Assess the options against the confirmed user outcome and existing constraints; return a recommendation, trade-offs, and material risks for the team to decide.
+- **Enable the agreed capability** - Deliver the selected approach so the confirmed user outcome can be demonstrated; leave implementation details to engineering.
+- **Integrate the capability into the user workflow** - Make the outcome available in the relevant product experience, without prescribing a particular interface or service design.
+- **Validate behavior and existing functionality** - Verify the confirmed user scenarios and check that named existing behavior remains usable.
 
 Use only the task outcomes that apply. Do not automatically include every example above.
 
 ## Optional standalone Task format
 
 ```markdown
-## Objective
-[Concrete engineering outcome, without prescribing its internal design.]
-
-## Context
-[Why this work supports the parent user outcome.]
+[Opening narrative: the problem, the user outcome supported and the concrete engineering deliverable, without prescribing its internal design.]
 
 ## Scope
 - [Confirmed work or investigation deliverable]
@@ -76,8 +76,8 @@ Technical directive:
 
 Implementation-neutral suggestions:
 
-- **Evaluate viable approaches** — Recommend how to support related-knowledge discovery within the existing product and knowledge-base constraints; document trade-offs and blockers.
-- **Enable related-knowledge discovery** — Implement the approach selected by engineering so the confirmed user scenarios can be demonstrated.
-- **Validate related results in the answer experience** — Check that surfaced information is relevant to the user's question and that existing search behavior remains usable.
+- **Evaluate viable approaches** - Recommend how to support related-knowledge discovery within the existing product and knowledge-base constraints; document trade-offs and blockers.
+- **Enable related-knowledge discovery** - Implement the approach selected by engineering so the confirmed user scenarios can be demonstrated.
+- **Validate related results in the answer experience** - Check that surfaced information is relevant to the user's question and that existing search behavior remains usable.
 
 These are suggested task outcomes, not a prescribed architecture or mandatory task set. Include an incremental-update task only when that behavior is confirmed as in scope.

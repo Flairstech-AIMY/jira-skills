@@ -11,16 +11,17 @@ Turn messy input into a Jira issue that a product, engineering, QA, or DevOps te
 
 - Preserve the user's intent and all confirmed facts.
 - Follow `jira-description-format`: open every Description with a short prose narrative of the need and the story behind it (no leading header, never `## Business Context`), and omit `## Suggested Owner`, `## Estimate`, `## Dependencies`, and `## Technical Notes` unless the user explicitly asks for them.
-- Keep the ticket concise. Remove filler, repetition, conversational phrasing, and unnecessary background.
+- Keep the ticket concise while retaining the current workflow, concrete difficulty, business reason and examples that explain the need to an engineer.
 - Do not invent missing behavior, technical details, dates, severity, assignees, estimates, or acceptance criteria that are not supported by the input.
 - Preserve supplied URLs and references exactly unless the user explicitly asks to clean them.
 - Prefer testable outcomes over implementation instructions.
 - Keep terminology consistent with the user's product names and domain language.
 - Make urgency visible when the user explicitly states it, but do not assign a Jira priority unless asked.
-- If a material requirement is genuinely unknown, use `TBD` or an `Open Questions` section rather than guessing.
+- If missing product intent affects the feature, ask or flag it for the user outside the publishable description. If the user has delegated a method to research, preserve the outcome and investigate the method rather than asking them to design it.
 - Do not add sections that contain no useful information.
 - When the title will appear on a customer-facing or stakeholder roadmap, make the delivered outcome clear in plain language without relying on internal context or unexplained jargon.
-- Keep the Jira Summary and Description separate: never repeat the issue title as an H1 or first line in the Description. Start with the first useful section instead.
+- Keep the Jira Summary and Description separate: never repeat the issue title as an H1 or first line in the Description. Begin with the problem narrative.
+- Use plain hyphens for authored title separators; avoid em dashes and vertical-bar prose separators. Preserve exact source text when fidelity is required.
 
 ## Choose the Issue Type
 
@@ -28,7 +29,7 @@ Use the issue type requested by the user when one is explicitly specified.
 
 Otherwise:
 
-- **Story**: A user, customer, admin, agent, or other actor gains a capability or experiences a behavior change that delivers product value.
+- **Story**: A user, customer, admin, agent, or other actor receives a feature or observable behavior change. An investigation or engineering activity does not become a Story through an `As a user` sentence.
 - **Bug**: Existing behavior is incorrect, broken, inconsistent with intended behavior, or has regressed.
 - **Task**: Internal technical work, implementation work, maintenance, configuration, migration, cleanup, or a concrete engineering deliverable without a standalone user-value story.
 - **Investigation / Spike**: The primary objective is to discover a cause, validate feasibility, or answer an unresolved technical question. Use this only when the Jira project supports such an issue type. Otherwise use a Task and make the investigation objective explicit.
@@ -42,8 +43,8 @@ When the user asks whether something is a Story or Task, explain the distinction
 3. Select the issue type.
 4. Remove duplicated or low-value information.
 5. Structure the ticket using the most appropriate template below.
-6. Write acceptance criteria that describe observable completion conditions.
-7. Check that every acceptance criterion is supported by the stated requirement.
+6. Write Definition of Done bullets that describe observable completion conditions. Use Acceptance Criteria when explicitly requested.
+7. Check that every completion condition is supported by the stated requirement, including whether examples are illustrative or fixed rules.
 8. Check that no supplied reference or important edge case was lost.
 9. Verify the Description does not repeat the Jira Summary/title.
 
@@ -52,19 +53,9 @@ When the user asks whether something is a Story or Task, explain the distinction
 Use this structure when the issue is a Story. Omit optional sections when unnecessary.
 
 ```markdown
-## User Story
-As a [actor],
-I want [capability or behavior],
-so that [user or business outcome].
+[Opening narrative: who needs the feature, what happens today, their concrete difficulty, and the outcome they expect.]
 
-## Problem
-[What is missing or failing today and why it matters.]
-
-## Requirements
-- [Required behavior]
-- [Required behavior]
-
-## Acceptance Criteria
+## Definition of Done
 - [Observable, testable result]
 - [Observable, testable result]
 
@@ -75,22 +66,18 @@ so that [user or business outcome].
 - [Provided reference]
 ```
 
-Do not force an `As a / I want / so that` sentence when it would be artificial. For highly technical stories, a clear objective may be better.
+Do not force an `As a / I want / so that` sentence when it would be artificial. If the work has only an internal engineering deliverable or investigation decision, use the appropriate Task or Research type instead of disguising it as a Story.
 
 ## Task Format
 
 ```markdown
-## Objective
-[Concrete technical or operational outcome.]
-
-## Context
-[Only the context needed to understand why the task exists.]
+[Opening narrative: the problem, why this work is needed and the concrete technical or operational outcome.]
 
 ## Scope
 - [Required work]
 - [Required work]
 
-## Acceptance Criteria
+## Definition of Done
 - [Observable completion condition]
 - [Observable completion condition]
 
@@ -101,8 +88,7 @@ Do not force an `As a / I want / so that` sentence when it would be artificial. 
 ## Bug Format
 
 ```markdown
-## Problem
-[Concise description of the defect.]
+[Opening narrative: the observed defect, affected workflow and supplied evidence of its impact.]
 
 ## Impact
 [Who or what is affected, using only provided information.]
@@ -119,7 +105,7 @@ Do not force an `As a / I want / so that` sentence when it would be artificial. 
 ## Evidence
 [Logs, screenshots, IDs, links, examples, timestamps, or other supplied evidence.]
 
-## Acceptance Criteria
+## Definition of Done
 - [The defect no longer occurs under the known condition.]
 - [Expected behavior is verified.]
 
@@ -127,9 +113,9 @@ Do not force an `As a / I want / so that` sentence when it would be artificial. 
 - [Provided reference]
 ```
 
-## Acceptance Criteria Rules
+## Completion Conditions
 
-Write acceptance criteria that are:
+Write Definition of Done bullets, or Acceptance Criteria when requested, that are:
 
 - observable;
 - testable;
@@ -155,6 +141,8 @@ Avoid:
 - Keep useful examples because they often remove ambiguity faster than more prose.
 - Keep future enhancements separate from current scope when the user distinguishes them.
 - Make related roadmap titles describe distinct customer outcomes rather than implementation subtasks.
+- In a review artifact, keep assignment reminders, local draft codes and questions for the reviewer separate. Before Jira publication, replace draft references with verified issue links and remove review-only notes.
+- Incorporate user answers into the narrative and completion conditions, then remove answered review flags. Keep unapproved suggestions distinguishable from confirmed requirements.
 
 ## Final Quality Check
 
@@ -164,7 +152,7 @@ Before returning the ticket, verify:
 - The title describes the outcome or defect, not the conversation about it, and is understandable to its roadmap audience.
 - The problem and scope are understandable without the original chat.
 - No unsupported assumptions were introduced.
-- Acceptance criteria are testable.
+- Completion conditions are testable.
 - Important examples and references remain intact.
 - The Jira Description starts with useful content rather than a duplicate title.
 - The result is ready to paste into Jira.

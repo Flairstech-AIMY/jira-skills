@@ -56,6 +56,8 @@ Use the following sections in the Jira Description; the issue title is already s
 
 Begin the Description with a short prose narrative of the need and the story behind the expected behavior, before any header. Do not add `## Suggested Owner`, `## Estimate`, `## Dependencies`, or `## Technical Notes` unless the user explicitly asks for them.
 
+Use Definition of Done by default and Acceptance Criteria when explicitly requested. Keep only sections that add useful behavior or validation detail, and avoid repeating the same problem in the opening narrative, User Story and Problem sections. Follow `jira-description-format` when available for title separators and separating review-only material.
+
 ```markdown
 [Opening prose: the need and the story behind it.]
 
@@ -74,7 +76,7 @@ so that [experience or business outcome].
 - **Exceptions:** [When not to apply it]
 - **Fallback:** [Only when explicitly needed]
 
-## Acceptance Criteria
+## Definition of Done
 - [Testable behavior]
 - [Testable exception]
 - [Testable fallback or timing condition]

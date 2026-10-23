@@ -9,20 +9,22 @@ Translate raw requirements into actionable Jira work that makes the business val
 
 For specialized conversational AI behavior, production incidents, ticket refinement, ticket drafting, or detailed feature-to-story breakdowns, use the corresponding focused skill when available.
 
+For rough notes covering several initiatives, use `jira-feature-breakdown` when available: understand the needs, group Epics, define user features, identify research decisions, then add only necessary technical Tasks. Use `jira-research-task` for investigations that need clear questions, evidence and decision outputs.
+
 ## Choose the work item type
 
 - **Epic:** a multi-sprint initiative that needs coordinated work.
-- **Story:** a user-facing capability or outcome.
+- **Story:** a feature a user receives and can demonstrate. An engineering activity does not become a Story by adding an `As a user` sentence.
 - **Task:** necessary technical work that is not itself a user story.
 - **Bug:** behavior that is broken or differs from the expected result.
-- **Research:** a time-bounded investigation that answers a specific question.
+- **Research:** a bounded investigation that answers a specific decision with evidence; do not invent a timebox or treat investigation as feature delivery.
 - Use project-supported types for design, infrastructure, or other specialized work when relevant.
 
 ## Titles
 
 For stories and other outcome-focused tickets, use:
 
-`{Product / Initiative} – {Domain / Area} – {User-Facing Outcome}`
+`{Product / Initiative} - {Domain / Area} - {User-Facing Outcome}`
 
 Describe what the user or stakeholder can accomplish. Keep implementation discipline and role tags (such as Frontend, Backend, Infrastructure, or Research) out of the title; mention an owner only when the user asks for one. For work that is inherently non-user-facing, retain the same clear product/domain framing and state the deliverable rather than pretending it is a user feature.
 
@@ -47,21 +49,25 @@ Add `## Technical Notes`, `## Suggested Owner`, `## Estimate`, or `## Dependenci
 
 ## Break down larger initiatives
 
-Split multi-sprint work into independently deliverable tickets that can be completed within a sprint. Depending on the actual workflow, consider separate work for user experience, frontend, backend/file and history management, orchestration or analysis flow, research, integrations, data collection, and storage/security/infrastructure. Use only the areas required by the initiative; do not create filler tickets. Preserve dependencies and make blockers explicit.
+Split larger initiatives by independently demonstrable user outcomes. Keep a meaningful end-to-end workflow together, and separate research when a decision is unresolved. Keep technical Tasks minimal; engineers can choose the implementation breakdown and propose further Stories after research. Do not manufacture frontend, backend, UX or infrastructure Stories to cover engineering layers, or claim sprint-sized delivery without a known scope.
 
 When a workflow has distinct user-visible stages (for example, handling a request, guiding the user through an eligible step, explaining follow-up, and preparing a handoff), assign each requirement to one clear ticket. Split only where the outcome can be delivered and validated independently; do not repeat shared behavior across several tickets.
 
 When rewriting or mapping existing Jira work, preserve its intent and provide a traceable old-to-new mapping. Cover the full workflow that the user actually described; do not impose a generic workflow where it does not apply.
 
+Give the engineer the current workflow, the concrete difficulty, why the change matters, confirmed expectations and useful examples. Keep examples configurable or illustrative when the user says they are examples. Put questions for the reviewing user outside publishable issue content, and remove answered flags when incorporating their decisions.
+
 ## Before creating Jira issues
 
-If the user has not already provided these details, ask for the missing information before creating issues: Jira project/board, sprint, priority, dependencies, blockers, and stakeholders. Do not guess issue types, issue fields, owners, or relationships. If some details are not applicable, confirm or document that rather than fabricating values. This intake requirement applies to issue creation; it need not block drafting a proposed ticket when the user only asks for text or a file.
+Resolve the target project and required create fields before creation. Reuse project, board, sprint, priority, relationship and stakeholder decisions already supplied in the session, including permission to leave optional fields unset. Ask only for still-missing information that materially affects the requested action. Do not invent values, repeatedly reopen answered intake questions, or hardcode a project from a previous engagement. Intake need not block drafting.
 
-Before creating, search the relevant Jira project for existing issues with the same or substantially similar outcome. If matching issues exist, avoid creating duplicates: summarize the match and clarify whether the user wants the existing issues updated or new distinct work created when intent is not clear.
+Before creating, search and read plausible existing matches. Compare actor, trigger, outcome and delivery scope; classify duplicate, partial overlap, related work, prior design/research, or unrelated. A design Task in UAT is not evidence that its runtime feature has shipped. Apply user corrections to matches and do not reintroduce rejected references without new evidence. If the choice to update or create remains material and unauthorized, present the reconciliation for review.
 
 When updating or creating issues, use the exact configured Jira values for parent, sprint, and fix version. Validate the available option/name rather than assuming a shorthand version string is accepted; preserve existing relationships and fields unless the user asks to change them.
 
 Use the available Jira integration when the user requests an issue to be created or updated. Check relevant project/type/field requirements and available tool documentation first. Confirm the resulting issue key and link only after the operation succeeds.
+
+When the user is reviewing before creation, preserve that boundary and prepare a concrete review artifact when requested. When creation is already authorized, do not add another approval step solely because this skill is being used. Keep local review codes and assignment notes out of Jira descriptions; resolve references to real issue links. For an instruction such as "add transcription and change nothing else," edit only the requested content and verify it by reading the issue back, without unrelated formatting cleanup.
 
 ## Ticket files
 
