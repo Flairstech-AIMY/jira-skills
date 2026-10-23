@@ -26,11 +26,15 @@ Do not use this skill to conceal a technical constraint that the user explicitly
 7. Add Open Questions only for uncertainties that materially affect product scope, user behavior, or validation. Do not ask questions that can be resolved structurally.
 8. Return the complete revised ticket, not a change summary, unless the user asks for critique only.
 
+First check that the draft represents a feature the user receives. If it only requests an investigation, design activity or engineering mechanism change, recommend Task or Research rather than adding a user persona to retain a Story label. Do not change a live issue type without authorization.
+
+Retain enough current workflow and concrete problem context for the engineer to understand why the feature matters. When two drafts describe the same user outcome, recommend consolidating them while preserving their confirmed examples and research needs.
+
 ## Story title
 
 Use a clear, stakeholder-understandable outcome title in this pattern when appropriate:
 
-`{Product / Initiative} – {Domain / Area} – {User-Facing Outcome}`
+`{Product / Initiative} - {Domain / Area} - {User-Facing Outcome}`
 
 Do not put role tags, engineering disciplines, implementation tasks, or unexplained technical terms in the title. Do not make a technical mechanism sound like the user feature. Keep the Jira Description separate from the Summary; do not repeat the title as a Description heading.
 
@@ -58,6 +62,9 @@ Never start with a header such as `## Business Context`. Add `## Technical Notes
 - Avoid vague claims such as “better experience” unless paired with the specific user outcome.
 - Avoid duplicating the opening narrative, requirements, and Definition of Done. Make each section serve a distinct purpose.
 - If the user asks for acceptance criteria, make each criterion observable and traceable to an explicit requirement; do not prescribe implementation.
+- Keep questions for the reviewing user in the review layer when one exists. Do not put commentary about missing notes into the Story, or ask the user to choose a method they have delegated to research.
+- Preserve confirmed terminology and configurable examples. Apply answers to all affected parts of the draft and remove answered flags.
+- Use plain hyphens instead of em dashes or vertical-bar prose separators. Replace local review codes with real Jira links when publishing, and omit assignment reminders and review-only notes.
 
 ## Final check
 

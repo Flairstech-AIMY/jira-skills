@@ -22,11 +22,13 @@ Improve an existing Jira issue without changing what the user is actually asking
 2. Remove conversational history, repeated statements, and filler that do not help implementation or validation.
 3. Consolidate duplicated requirements.
 4. Move details into the section where they are easiest to use.
-5. Add missing acceptance criteria only when they logically follow from explicit requirements.
+5. Add missing completion conditions only when they logically follow from explicit requirements.
 6. Identify material gaps that cannot be resolved from the source.
 7. Preserve all useful links, IDs, examples, and edge cases.
 8. Return the complete revised ticket, not a patch or list of edits, unless the user asks for a critique only.
 9. When editing Jira Description content, do not repeat the issue Summary/title as a heading or first line; remove a duplicate heading while preserving the Summary.
+
+Apply the user's edit boundary before cleanup. If asked to add one point and change nothing else, preserve unrelated wording, formatting and fields, then verify the narrow change. A request for critique only should return findings rather than modify the artifact; no changes is a valid review conclusion.
 
 ## Do Not Silently Fill Gaps
 
@@ -40,7 +42,7 @@ When information is missing:
 - do not invent permissions;
 - do not invent ownership or priority.
 
-If a gap materially blocks implementation or testing, add a short `Open Questions` section.
+If a gap materially blocks implementation or testing, ask the user or flag the needed decision. In a review artifact, keep questions addressed to the user outside the publishable description. Do not put intake commentary such as "the note has no baseline" in a Story. Questions that an explicitly delegated investigation must answer belong in the research item.
 
 If the user explicitly asks to brainstorm possible behavior, separate suggestions from confirmed requirements.
 
@@ -70,9 +72,14 @@ Preserve:
 - important exceptions;
 - explicit urgency or production impact;
 - user-provided technical constraints;
-- the distinction between confirmed behavior and unresolved decisions.
+- the distinction between confirmed behavior and unresolved decisions;
+- useful workflow context, examples and the reason behind a proposed technical change;
+- whether a numerical example is configurable or a confirmed fixed rule;
+- the user's corrections to terminology, scope, relationships and prior answers.
 
-## Acceptance Criteria Refinement
+After incorporating an answer, update the affected narrative, completion conditions and examples, and remove the answered review flag. If an activity has been mislabeled a Story, recommend the appropriate Task or Research type instead of rewriting it to sound user-facing. Do not change a live Jira issue type outside the authorized edit.
+
+## Completion Condition Refinement
 
 Turn vague requirements into observable behavior without adding new requirements.
 
@@ -115,6 +122,8 @@ Do not add edge cases solely because they are theoretically possible.
 
 Return the polished Jira ticket using the original issue type and a structure appropriate to it. Keep the title as the Jira Summary; omit it from Description field content.
 
-Add `Open Questions` only when unresolved information materially affects implementation or QA.
+Use Definition of Done by default and Acceptance Criteria when requested. Open the description with the problem narrative, retaining enough context for an engineer who has not read the chat. Use plain hyphen title separators and avoid em dashes or vertical-bar prose separators.
+
+For publication, replace local review references with verified Jira issue links and exclude review notes and assignment reminders. Research questions, evidence and expected outputs are substantive issue content and should be retained.
 
 Do not add a separate explanation of what you changed unless the user asks for one.
